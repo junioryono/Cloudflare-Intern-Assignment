@@ -9,7 +9,7 @@ function App() {
 
   useEffect(() => {
     if (posts === null) {
-      fetch("http://127.0.0.1:8787/posts")
+      fetch("https://assignment.leaguetracker.workers.dev/posts")
         .then((response) => (response && response.ok ? response.json() : false))
         .then((response) => setPosts(response || false))
         .catch((error) => console.log(error));
@@ -17,7 +17,7 @@ function App() {
   }, [posts]);
 
   const createPost = (body) => {
-    fetch("http://127.0.0.1:8787/posts", { method: "POST", body })
+    fetch("https://assignment.leaguetracker.workers.dev/posts", { method: "POST", body })
       .then((response) => (response && response.ok ? true : false))
       .then((response) => {
         if (response) {
